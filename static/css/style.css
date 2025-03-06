@@ -1,0 +1,263 @@
+/* 全体のスタイル */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #f8f9fa;
+}
+
+/* ヘッダー */
+.header {
+    background: linear-gradient(135deg, #0d6efd, #0dcaf0);
+    color: white;
+    padding: 2rem 0;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.header h1 {
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+/* メインコンテンツ */
+.main-content {
+    flex: 1;
+    padding: 2rem 0;
+}
+
+/* ログインフォーム */
+.card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: none;
+}
+
+.card-header {
+    background: #f8f9fa;
+    border-bottom: 1px solid #e9ecef;
+    padding: 1rem 1.25rem;
+    border-radius: 8px 8px 0 0;
+}
+
+.card-header h2 {
+    color: #2d3748;
+    margin: 0;
+}
+
+.card-body {
+    padding: 2rem;
+}
+
+.form-label {
+    font-weight: 500;
+    color: #4a5568;
+}
+
+.form-control {
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 0.75rem 1rem;
+    transition: all 0.2s;
+}
+
+.form-control:focus {
+    border-color: #3182ce;
+    box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.1);
+}
+
+.btn-primary {
+    background: #0061f2;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-weight: 500;
+    border-radius: 6px;
+    transition: all 0.2s;
+}
+
+.btn-primary:hover {
+    background: #0052cc;
+    transform: translateY(-1px);
+}
+
+/* アラートメッセージ */
+.alert {
+    border-radius: 6px;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    border: none;
+}
+
+.alert-info {
+    background-color: #ebf8ff;
+    color: #2c5282;
+}
+
+.alert-danger {
+    background-color: #fff5f5;
+    color: #c53030;
+}
+
+.alert-success {
+    background-color: #f0fff4;
+    color: #276749;
+}
+
+/* データベースビューワー */
+.database-card {
+    background: white;
+    border-radius: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+}
+
+.database-header {
+    background: #f8f9fa;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid #e9ecef;
+    cursor: pointer;
+}
+
+.database-header:hover {
+    background: #e9ecef;
+}
+
+.database-content {
+    padding: 1.5rem;
+}
+
+.table-section {
+    background: white;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.table-header {
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 0.5rem 0.5rem 0 0;
+    cursor: pointer;
+}
+
+.table-header:hover {
+    background: #e9ecef;
+}
+
+.table-content {
+    padding: 1rem;
+    display: none;
+}
+
+.table {
+    margin-bottom: 0;
+}
+
+.table thead th {
+    background: #f1f3f5;
+    border-bottom: 2px solid #dee2e6;
+}
+
+.icon-toggle {
+    transition: transform 0.2s;
+}
+
+.icon-toggle.rotated {
+    transform: rotate(180deg);
+}
+
+.btn-refresh {
+    background: white;
+    border: 1px solid #dee2e6;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    transition: all 0.2s;
+}
+
+.btn-refresh:hover {
+    background: #e9ecef;
+    border-color: #ced4da;
+}
+
+.loading {
+    display: none;
+    text-align: center;
+    padding: 2rem;
+}
+
+.loading-spinner {
+    width: 3rem;
+    height: 3rem;
+}
+
+/* フッター */
+.footer {
+    background: linear-gradient(135deg, #212529, #343a40);
+    color: white;
+    padding: 2rem 0;
+    margin-top: 3rem;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.footer-links a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.footer-links a:hover {
+    color: white;
+}
+
+.footer-social {
+    display: flex;
+    gap: 1rem;
+}
+
+.footer-social a {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.2rem;
+    transition: all 0.2s;
+}
+
+.footer-social a:hover {
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 1.5rem;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-links {
+        margin-bottom: 1rem;
+    }
+
+    .footer-links a {
+        display: block;
+        margin: 0.5rem 0;
+    }
+}

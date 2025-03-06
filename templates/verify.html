@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>認証コード確認 - Azure MySQL データベースビューワー</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <h1 class="mb-0">Azure MySQL データベースビューワー</h1>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <h2 class="h4 mb-0">認証コード確認</h2>
+                        </div>
+                        <div class="card-body">
+                            <p class="text-muted mb-4">
+                                SMSで送信された6桁の認証コードを入力してください。
+                            </p>
+                            <form method="POST" action="{{ url_for('verify') }}">
+                                <div class="mb-3">
+                                    <label for="code" class="form-label">
+                                        <i class="fas fa-key"></i> 認証コード
+                                    </label>
+                                    <div class="input-group">
+                                        <span class="input-group-text"><i class="fas fa-key"></i></span>
+                                        <input type="text" class="form-control" id="code" name="code" 
+                                               required pattern="[0-9]{6}" maxlength="6" minlength="6"
+                                               placeholder="6桁の数字を入力"
+                                               inputmode="numeric">
+                                    </div>
+                                    <div class="form-text">SMSで送信された6桁の数字を入力してください</div>
+                                </div>
+                                <button type="submit" class="btn btn-primary w-100">
+                                    <i class="fas fa-check-circle me-2"></i>認証する
+                                </button>
+                            </form>
+                            <div class="mt-3 text-center">
+                                <a href="{{ url_for('resend_code') }}" class="text-decoration-none">
+                                    <i class="fas fa-sync-alt me-1"></i>認証コードを再送信
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="text-center">
+                <small class="text-muted"> 2025 Azure MySQL データベースビューワー. All rights reserved.</small>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
