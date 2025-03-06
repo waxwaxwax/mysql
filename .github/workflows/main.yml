@@ -24,6 +24,10 @@ jobs:
         pip install -r requirements.txt
         pip install pytest pytest-cov flake8
     
+    - name: Download SSL Certificate
+      run: |
+        curl -o DigiCertGlobalRootCA.crt.pem https://dl.cacerts.digicert.com/DigiCertGlobalRootCA.crt.pem
+    
     - name: Run linting
       run: |
         flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
@@ -50,6 +54,10 @@ jobs:
     
     steps:
     - uses: actions/checkout@v2
+    
+    - name: Download SSL Certificate
+      run: |
+        curl -o DigiCertGlobalRootCA.crt.pem https://dl.cacerts.digicert.com/DigiCertGlobalRootCA.crt.pem
     
     - name: Set up Azure CLI
       uses: azure/login@v1
